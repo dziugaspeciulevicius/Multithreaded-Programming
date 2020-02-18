@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class SingleThread {
 
     public static void main(String[] args) throws InterruptedException {
         //MAKING RUN 3 LOOPS AT THE SAME TIME
@@ -10,21 +10,15 @@ public class Main {
     }
 
     private static void createJavaThread(){
-        JAVAThreadTest threadTest = new JAVAThreadTest();
+        new JAVAThreadTest().start();
+//        Thread thread = new Thread();
+//        thread.start();
 
-        Thread thread = new Thread(threadTest);
-        thread.setName("JAVA_THREAD");
-
-        thread.start();
+        //WHEN WE CALL START METHOD, RUN METHOD IS CALLED
     }
 
     private static void createJAVAFXThread(){
-        JAVAFXThreadTest javafxThreadTest = new JAVAFXThreadTest();
-
-        Thread thread = new Thread(javafxThreadTest);
-        thread.setName("JAVAFX_THREAD");
-
-        thread.start();
+        new JAVAFXThreadTest().start();
     }
 
     private static void createAndroidThread(){
