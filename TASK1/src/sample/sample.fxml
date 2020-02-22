@@ -17,8 +17,8 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <VBox style="-fx-background-color: #2D3A51;" HBox.hgrow="ALWAYS" />
-                  <VBox style="-fx-background-color: white;" HBox.hgrow="ALWAYS" />
+                  <VBox prefHeight="585.0" prefWidth="0.0" style="-fx-background-color: #2D3A51;" HBox.hgrow="ALWAYS" />
+                  <VBox prefHeight="585.0" prefWidth="135.0" style="-fx-background-color: #e0e0e0;" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="1085.0" style="-fx-background-color: white;">

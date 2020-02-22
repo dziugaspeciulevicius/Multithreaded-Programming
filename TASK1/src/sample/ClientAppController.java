@@ -1,6 +1,5 @@
 package sample;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -14,6 +13,8 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.google.common.base.Stopwatch;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -28,23 +29,19 @@ public class ClientAppController implements Runnable {
     @FXML private TextField itemNameInput;
     @FXML private TextField folderNameInput;
     @FXML private Button searchFileButton;
-    @FXML private Label searchDurationLabel;
     @FXML private Button chooseDirButton;
-    @FXML private TableView<?> outputTable;
-    @FXML private TableColumn<?, ?> folderListColumn;
-    @FXML private TableColumn<?, ?> itemsFoundColumn;
-    
-    @Override
-    public void run() {
-
-    }
+    @FXML private Label searchDurationLabel;
+//    @FXML private TableView<?> outputTable;
+//    @FXML private TableColumn<?, ?> folderListColumn;
+//    @FXML private TableColumn<?, ?> itemsFoundColumn;
 
     private void walk(String path) {
 
-        File root = new File( path );
+        File root = new File(path);
         File[] list = root.listFiles();
 
-        if (list == null) return;
+        if (list == null)
+            return;
 
         for ( File file : list ) {
             if ( file.isDirectory() ) {
@@ -89,17 +86,15 @@ public class ClientAppController implements Runnable {
 
             //making search run in a thread so UI is not stuck while search is happening
             new Thread(() -> {
-
                 //----------------TIMER START---------------------------------------
-                Instant start = Instant.now();
-                //long start = System.nanoTime();
-                //--------------------------------------------------------------------
+                //Using google stopwatch (jar file and import needed)
+                Stopwatch stopwatch = Stopwatch.createUnstarted();
+                stopwatch.start();
 
                 ClientAppController filewalker = new ClientAppController();
                 filewalker.walk(folderNameInput.getText());
 
                 try (Stream<Path> walk = Files.walk(Paths.get(folderNameInput.getText()))) {
-
                     List<String> result = walk.map(x -> x.toString())
                             .filter(f -> f.contains(itemNameInput.getText()))
                             .collect(Collectors.toList());
@@ -110,17 +105,20 @@ public class ClientAppController implements Runnable {
                     e.printStackTrace();
                 }
 
-                Instant end = Instant.now();
-                Duration timeElapsed = Duration.between(start, end);
-                System.out.println("Time passed: " + timeElapsed);
 
-                searchDurationLabel.setText(String.valueOf(timeElapsed));
-                //long end = System.nanoTime();
-                //long elapsedTime = end - start;
-                //System.out.println(elapsedTime / 1000000000);
+                //----------------TIMER STOP---------------------------------------
+                stopwatch.stop();
+                System.out.println("Time elapsed: " + stopwatch);
+                //Error when trying to display elapsed time onto GUI
+                searchDurationLabel.setText(stopwatch.toString());
             }).start();
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void run() {
+
     }
 }
