@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="739.0" style="-fx-background-color: #A4A4A2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIMain.EncodeDecode">
+   <children>
+      <Button fx:id="encodeButton" layoutX="146.0" layoutY="465.0" mnemonicParsing="false" onAction="#EncodeAction" prefHeight="39.0" prefWidth="202.0" style="-fx-background-color: #E68FAD; -fx-background-radius: 15px;" text="Encode" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="739.0" style="-fx-background-color: #E68FAD;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a path and an action to complete">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
+      </HBox>
+      <Button fx:id="addFilesButton" layoutX="539.0" layoutY="101.0" mnemonicParsing="false" onAction="#addFilesAction" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #E68FAD; -fx-background-radius: 15px;" text="Select" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="filePath" editable="false" layoutX="53.0" layoutY="101.0" prefHeight="39.0" prefWidth="444.0" promptText="Path" />
+      <Button fx:id="decodeButton" layoutX="392.0" layoutY="465.0" mnemonicParsing="false" onAction="#DecodeAction" prefHeight="39.0" prefWidth="202.0" style="-fx-background-color: #E68FAD; -fx-background-radius: 15px;" text="Decode" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="infoTextArea" editable="false" layoutX="54.0" layoutY="165.0" prefHeight="286.0" prefWidth="631.0" promptText="Status" wrapText="true" />
+      <ProgressBar fx:id="actionProgressBar" layoutX="53.0" layoutY="521.0" prefHeight="39.0" prefWidth="565.0" progress="0.0" />
+      <Text fx:id="progressPercentage" fill="WHITE" layoutX="634.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="RIGHT" wrappingWidth="50.962890625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

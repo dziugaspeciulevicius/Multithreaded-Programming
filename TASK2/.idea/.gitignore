@@ -1,2 +1,5 @@
 # Default ignored files
 /workspace.xml
+commons-codec-1.14
+# Datasource local storage ignored files
+/dataSources.local.xml
