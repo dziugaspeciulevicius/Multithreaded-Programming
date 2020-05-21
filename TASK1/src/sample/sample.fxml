@@ -39,7 +39,7 @@
                   <Text layoutX="76.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #3B969B;" text="Enter the name of the file/folder you want to search:" />
                   <Button fx:id="searchFileButton" layoutX="172.0" layoutY="369.0" mnemonicParsing="false" onAction="#SearchFile" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #3B969B; -fx-text-fill: white; -fx-background-radius: 50px; -fx-font-weight: bold;" text="Search" />
                   <Separator layoutX="472.0" layoutY="37.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="0.0" style="-fx-background-color: #3B969B;" />
-                  <Button fx:id="chooseDirButton" layoutX="262.0" layoutY="289.0" mnemonicParsing="false" onAction="#ChooseDir" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #FE9992; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;" text="Choose dir">
+                  <Button fx:id="chooseDirButton" layoutX="273.0" layoutY="289.0" mnemonicParsing="false" onAction="#ChooseDir" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #FE9992; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;" text="Choose dir">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -51,7 +51,7 @@
                         <Blend opacity="0.0" />
                      </effect></TextField>
                   <TextArea fx:id="outputArea" editable="false" layoutX="540.0" layoutY="283.0" prefHeight="200.0" prefWidth="506.0" wrapText="true" />
-                  <ProgressBar layoutX="677.0" layoutY="136.0" prefWidth="200.0" progress="0.0" />
+                  <ProgressBar layoutX="682.0" layoutY="134.0" prefWidth="200.0" progress="0.0" />
                   <TextArea fx:id="realTimeOutput" editable="false" layoutX="539.0" layoutY="173.0" prefHeight="62.0" prefWidth="506.0" wrapText="true" />
                </children>
                <effect>
