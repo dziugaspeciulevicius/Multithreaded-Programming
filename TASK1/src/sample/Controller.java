@@ -1,7 +1,5 @@
 package sample;
 
-import com.google.common.base.Stopwatch;
-import com.google.common.cache.CacheLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -100,8 +98,8 @@ public class Controller implements Runnable {
 
                 //----------------TIMER START---------------------------------------
                 //Using google stopwatch (jar file and import needed)
-                Stopwatch stopwatch = Stopwatch.createUnstarted();
-                stopwatch.start();
+  //              Stopwatch stopwatch = Stopwatch.createUnstarted();
+  //              stopwatch.start();
 
                 outputArea.clear();
 
@@ -119,15 +117,15 @@ public class Controller implements Runnable {
 
 
 
-                    } catch (CacheLoader.InvalidCacheLoadException e) {
+ //                   } catch (CacheLoader.InvalidCacheLoadException e) {
                     } catch (IOException e){
                         e.printStackTrace();
                     }
                 //----------------TIMER STOP---------------------------------------
-                stopwatch.stop();
+ //               stopwatch.stop();
                 //Error when trying to display elapsed time onto GUI with a label, works with a text box
-                searchDurationField.setText(valueOf(stopwatch));
-                System.out.println("Time elapsed: " + stopwatch);
+ //               searchDurationField.setText(valueOf(stopwatch));
+ //               System.out.println("Time elapsed: " + stopwatch);
 
             }).start();
 

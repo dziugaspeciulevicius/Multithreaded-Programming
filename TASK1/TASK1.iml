@@ -16,5 +16,20 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../TASK2/commons-codec-1.14" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/../TASK2/commons-codec-1.14/apidocs" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../TASK2/commons-codec-1.14" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../TASK2/commons-codec-1.14" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../TASK2/commons-codec-1.14" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>
